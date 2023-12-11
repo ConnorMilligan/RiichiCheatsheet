@@ -1,1 +1,2 @@
 # RiichiCheatsheet
+A small, single-page Riichi Mahjong cheatsheet inspired by the [excellent LaTeX cheatsheet](https://github.com/wch/latexsheet) by Winston Chang. This should be enough for beginner players to make some basic yaku.

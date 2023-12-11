@@ -1,0 +1,90 @@
+\documentclass[12pt,landscape]{article}
+\usepackage{mahjong} % Display mahjong tiles
+\usepackage{multicol} % Multiple columns
+\usepackage{ifthen} % Conditional statements
+\usepackage[landscape]{geometry} % Page geometry
+\usepackage{CJKutf8} % Chinese, Japanese, Korean
+\usepackage{array}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+
+% Remove header and footer
+\pagestyle{empty}
+% Remove section numbering
+\setcounter{secnumdepth}{0}
+
+% Set page margins (https://github.com/wch/latexsheet/blob/gh-pages/latexsheet.tex)
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+	{ \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+
+\begin{document}
+\begin{multicols*}{2}
+
+    \begin{center}
+        \begin{CJK}{UTF8}{min}
+            \Large\textbf{リーチ麻雀 チートシート}
+        \end{CJK}\\
+        \small{Riichi Mahjong Cheat Sheet}
+    \end{center}
+
+    \section{The Game}
+    Riichi Mahjong is a game for four players. 
+    The goal is to get a winning hand by drawing and discarding tiles.
+    The game ends when a player declares a winning hand.
+
+    \section{The Tiles}
+    There are 136 tiles in total; there are 34 kinds of unique tiles, with four of each kind.
+    There are both numbered tiles and honor tiles.
+    
+    \subsection{Numbered Tiles}
+    There are three suits of numbered tiles in a set of mahjong tiles, each with nine tiles numbered 1 to 9.
+    The suits are: \textbf{Manzu} (\begin{CJK}{UTF8}{min}萬子\end{CJK}), 
+    \textbf{Pinzu} (\begin{CJK}{UTF8}{min}筒子\end{CJK}), 
+    and \textbf{Sōuzu} (\begin{CJK}{UTF8}{min}索子\end{CJK}).\\
+
+    % Tile Table
+    \hspace*{-1.5em}
+    \begin{tabular}{m{0.2\linewidth}|c|c|c|c|c|c|c|c|c|}
+    \multicolumn{1}{c|}{} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+        \textbf{Manzu} (Characters) & 
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{1m}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{2m}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{3m}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{4m}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{5m}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{6m}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{7m}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{8m}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{9m}}} \\ \hline
+        \textbf{Pinzu} \t(Circles) &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{1p}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{2p}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{3p}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{4p}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{5p}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{6p}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{7p}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{8p}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{9p}}} \\ \hline
+        \textbf{Sōuzu} \t(Bamboos) &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{1s}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{2s}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{3s}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{4s}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{5s}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{6s}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{7s}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{8s}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{9s}}} \\ \hline
+
+\end{tabular}
+    \subsection{Yaku}
+    Yaku are patterns that can be used to win the game.
+
+\end{multicols*}
+\end{document}
