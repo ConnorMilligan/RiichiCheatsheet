@@ -23,7 +23,8 @@
 	}
 
 \begin{document}
-\begin{multicols*}{2}
+\begin{minipage}[t][.8\textheight][t]{\textwidth}
+\begin{multicols*}{3}
 
     \begin{center}
         \begin{CJK}{UTF8}{min}
@@ -47,6 +48,14 @@
     \textbf{Pinzu} (\begin{CJK}{UTF8}{min}筒子\end{CJK}), 
     and \textbf{Sōuzu} (\begin{CJK}{UTF8}{min}索子\end{CJK}).\\
 
+    \subsection{Yaku}
+    Yaku are patterns that can be used to win the game.
+
+\end{multicols*}
+\end{minipage}
+
+% Bottom half of page
+\begin{multicols*}{2}
     % Tile Table
     \hspace*{-1.5em}
     \begin{tabular}{m{0.2\linewidth}|c|c|c|c|c|c|c|c|c|}
@@ -81,10 +90,28 @@
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{7s}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{8s}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{9s}}} \\ \hline
+    \end{tabular}
 
-\end{tabular}
-    \subsection{Yaku}
-    Yaku are patterns that can be used to win the game.
+    % Dragon Tiles
+    \hspace*{-1.5em}
+    \begin{tabular}{m{0.2\linewidth}|c|c|c|}
+    \multicolumn{1}{c|}{} & Green & Red & White \\ \hline
+        \textbf{Sangenpai} (Dragons) & 
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{6z}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{7z}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{5z}}} \\ \hline
+    \end{tabular} \\ \\
 
-\end{multicols*}
+    % Wind Tiles
+    \hspace*{-1.5em}
+    \begin{tabular}{m{0.2\linewidth}|c|c|c|c|}
+    \multicolumn{1}{c|}{} & East & South & West & North \\ \hline
+        \textbf{Kazehai} (Winds) & 
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{1z}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{2z}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{3z}}} &
+            \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{4z}}} \\ \hline
+    \end{tabular}
+    
+\end {multicols*}
 \end{document}
