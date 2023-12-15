@@ -1,4 +1,4 @@
-\documentclass[12pt,landscape]{article}
+\documentclass[8pt,landscape]{article}
 \usepackage{mahjong} % Display mahjong tiles
 \usepackage{multicol} % Multiple columns
 \usepackage{ifthen} % Conditional statements
@@ -38,6 +38,12 @@
     The goal is to get a winning hand by drawing and discarding tiles.
     The game ends when a player declares a winning hand.
 
+    \subsection{The Hand}
+    Similar to Omaha Poker, a player will swap out tiles from their hand to form a winning hand.
+    The two main patters are sets and sequences.
+    A set is three of the same tile, and a sequence is three consecutive tiles of the same suit.
+    For example, \mahjong{123p} is a sequence, and \mahjong{111p} is a set.
+
     \section{The Tiles}
     There are 136 tiles in total; there are 34 kinds of unique tiles, with four of each kind.
     There are both numbered tiles and honor tiles.
@@ -49,11 +55,57 @@
     and \textbf{Sōuzu} (\begin{CJK}{UTF8}{min}索子\end{CJK}).\\
 
     \subsection{Honor Tiles}
-    There are two types of honor tiles: \textbf{Sangenpai} (\begin{CJK}{UTF8}{min}三元牌\end{CJK}) and \textbf{Kazehai} (\begin{CJK}{UTF8}{min}風牌\end{CJK}).
-    There are three \textbf{Sangenpai} (Dragon) tiles \mahjong{675z} and four \textbf{Kazehai} (Wind) tiles \mahjong{1234z}.
+    There are two types of honor tiles:
+    Three \textbf{Sangenpai} (\begin{CJK}{UTF8}{min}三元牌\end{CJK}) tiles \mahjong{675z} and four \textbf{Kazehai} (\begin{CJK}{UTF8}{min}風牌\end{CJK}) tiles \mahjong{1234z}.
 
     \section{Yaku}
-    Yaku are patterns that can be used to win the game.
+    Yaku (\begin{CJK}{UTF8}{min}役\end{CJK}) are patterns that can be used to win the game.
+    There are 46 Yaku in total, and each Yaku is worth a certain number of Han (\begin{CJK}{UTF8}{min}飜\end{CJK}).
+    Only a couple basic Yaku are needed for most hands.
+
+    \subsection{Riichi (Closed)}
+    Riichi (\begin{CJK}{UTF8}{min}リーチ\end{CJK}) can be declared when a player is \textbf{one tile away from winning}.
+    A player who has declared Riichi cannot change their hand.
+    If a player wins after declaring Riichi, they will receive a bonus Han.
+
+    \subsection{Tanyao}
+    Tanyao (\begin{CJK}{UTF8}{min}断么九\end{CJK}) is a hand with no terminal or honor tiles.
+    Terminal tiles are 1s and 9s, and honor tiles are \textbf{Sangenpai} and \textbf{Kazehai}.
+    This is the most basic Yaku, and it is worth one Han.
+    \mahjong{234m455667p23488s} is a Tanyao hand.
+
+    \subsection{Pinfu (Closed)}
+    Pinfu (\begin{CJK}{UTF8}{min}平和\end{CJK}) is a hand with no sets and a sequence as the winning tile.
+    This sequence must be a two-sided wait (\begin{CJK}{UTF8}{min}両面待ち\end{CJK}).
+    For example, \mahjong{12355m34789p456s} is a Pinfu hand. Because the winning tile is a double-sided wait (\mahjong{25p}).
+
+    \section{Melding}
+    Besides drawing and discarding tiles, a player can also meld tiles to form sets.
+    These will take tiles from the player's hand and place them face up in front of the player.
+    This will also open your hand, limiting certain Yaku and exposing your hand to other players.
+    \subsection{Chi}
+    Chi (\begin{CJK}{UTF8}{min}チー\end{CJK}) is a call to take a tile from the player to the right.
+
+    \subsection{Pon}
+    Pon (\begin{CJK}{UTF8}{min}ポン\end{CJK}) is a call to take a tile from any player.
+
+    \subsection{Kan}
+    Kan (\begin{CJK}{UTF8}{min}カン\end{CJK}) is a call to take a tile from any player and draw an extra tile.
+    The dora indicator is flipped over, and the player who called Kan draws an extra tile.
+
+    \subsection{Ron}
+    Ron (\begin{CJK}{UTF8}{min}ロン\end{CJK}) is a call to win the game with a discard from any player.
+
+    \section{Dora}
+    Dora (\begin{CJK}{UTF8}{min}ドラ\end{CJK}) are bonus tiles that increase the value of a hand.
+    The Dora indicator is the tile next to the dead wall.
+    The Dora tile is the tile after the Dora indicator. For example, if the Dora indicator is \mahjong{5p}, then the Dora tile is \mahjong{6p}.
+    Red Five tiles (\mahjong{0m0p0s}) are also Dora tiles.
+
+    \section{Furi-Ten}
+    Furi-Ten (\begin{CJK}{UTF8}{min}振聴\end{CJK}) is a penalty for discarding a tile earlier in the game that could have been used to win.
+    If a player has Furi-Ten, they cannot win on a discard from another player.
+    
 
 \end{multicols*}
 \end{minipage}
@@ -63,8 +115,8 @@
     % Tile Table
     \hspace*{-1.5em}
     \begin{tabular}{m{0.2\linewidth}|c|c|c|c|c|c|c|c|c|}
-    \multicolumn{1}{c|}{} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
-        \textbf{Manzu} (Characters) & 
+    \multicolumn{1}{l|}{} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+        \textbf{Manzu Tiles} (Characters) & 
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{1m}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{2m}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{3m}}} &
@@ -74,7 +126,7 @@
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{7m}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{8m}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{9m}}} \\ \hline
-        \textbf{Pinzu} \t(Circles) &
+        \textbf{Pinzu Tiles} (Circles) &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{1p}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{2p}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{3p}}} &
@@ -84,7 +136,7 @@
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{7p}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{8p}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{9p}}} \\ \hline
-        \textbf{Sōuzu} \t(Bamboos) &
+        \textbf{Sōuzu Tiles} (Bamboos) &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{1s}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{2s}}} &
             \raisebox{-0.4\height}{\resizebox{!}{2em}{\mahjong{3s}}} &
